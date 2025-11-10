@@ -1,0 +1,33 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Document</title>  
+  <link rel="stylesheet" href="style.css">  
+  <script src="script.js" defer> </script>  
+</head>  
+<body onload="zagruzka()" >  
+<div>  
+  <div>        
+    <input type="text" id="nik" class="nik">
+    <input type="text" value="bot" class="nik">
+    </div>
+    <div>
+      <input type="text" id="tvoi_score" class="nik" value="0">
+      <input type="text" id="bot_score" class="nik" value="0">
+    </div>
+    <table>    
+      <td>
+        <div class="ball"> <img src="" alt="" id="You_card"></div>
+      </td>  
+      <td>
+        <div class="ball" > <img src="" alt="" id="bot_card" ></div>
+      </td>
+    </table>
+    <input type="button" value="Взять" onclick="add()" class="button">
+
+    <input type="button" value="Пас" onclick="pass()" class="button">
+</div>
+</body>  
+</html> 
