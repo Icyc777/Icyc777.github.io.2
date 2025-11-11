@@ -1,5 +1,7 @@
 let bot_score = 0;
 let tvoi_score = 0;
+let bot_score2 = 0;
+let tvoi_score2 = 0;
 i=0;
 const cards = [
   {name:"6", value:6},
@@ -22,6 +24,8 @@ function zagruzka(){
         alert("Ви не вели нік");
         const nik = "You";
         document.getElementById("nik").value=nik;
+        document.getElementById("nikfalse").value=nik;
+
     }    
 }
 function pass() {
@@ -34,33 +38,42 @@ function pass() {
         }
     }
 }
-function add(){
+function raund(){
     if(i>=3){
         check2()
         return
     }
-    let tvoi_Card = randomCard();
-    tvoi_score += tvoi_Card.value;
-    document.getElementById("tvoi_score").value=tvoi_score;
-    let bot_Card = randomCard();
-    bot_score+= bot_Card.value;
-    document.getElementById("bot_score").value=bot_score;
+    const tvoi_Card = randomCard();
+    tvoi_score2 += tvoi_Card.value;
+    document.getElementById("tvoi_scorefalse").value=tvoi_score2;
+    const bot_Card = randomCard();
+    bot_score2+= bot_Card.value;
+    document.getElementById("bot_scorefalse").value=bot_score2;
     i++;
 }
+
+function add(){
+    const tvoi_Card = randomCard();
+    tvoi_score += tvoi_Card.value;
+    document.getElementById("tvoi_score").value=tvoi_score;
+}
+
 function check2(){
     
     let nik = document.getElementById("nik").value;
-    if(tvoi_score==bot_score){
+    if(tvoi_score2==bot_score2){
         alert("Ніч'я");
     }
-    if(tvoi_score>bot_score){
+    if(tvoi_score2>bot_score2){
             alert(nik +' WIN');
         } 
-   if(bot_score>tvoi_score){
+   if(bot_score2>tvoi_score2){
             alert('Bot WIN');
     } 
 }
 function check(){
+    let nik = document.getElementById("nik").value;
+
     if(bot_score<16){
         pass()
     }
